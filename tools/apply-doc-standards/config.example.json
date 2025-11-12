@@ -1,0 +1,50 @@
+{
+    "file": {
+        "extensions": ["md", "markdown"],
+        "exclude_patterns": [
+            "vendor/",
+            "node_modules/",
+            ".git/",
+            "__MACOSX/",
+            ".DS_Store",
+            "Thumbs.db",
+            "*.bak.*",
+            "backup/"
+        ],
+        "max_file_size": 10485760
+    },
+    "processing": {
+        "dry_run": false,
+        "force": false,
+        "backup": true,
+        "encoding": "UTF-8",
+        "line_endings": "\n"
+    },
+    "standards": {
+        "require_introduction": true,
+        "require_toc": true,
+        "require_navigation": true,
+        "toc_collapsible": true,
+        "anchor_prefix": "",
+        "section_numbering": true,
+        "navigation_format": "Previous: {previous} | Next: {next} | Top"
+    },
+    "content": {
+        "min_content_length": 100,
+        "max_title_length": 100,
+        "toc_min_sections": 2,
+        "navigation_top_link": "#top",
+        "introduction_section": "1"
+    },
+    "output": {
+        "verbose": false,
+        "show_changes": true,
+        "show_skipped": true,
+        "color_output": true
+    },
+    "validation": {
+        "check_links": true,
+        "check_structure": true,
+        "check_accessibility": true
+    }
+}
