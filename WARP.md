@@ -198,14 +198,7 @@ git commit -m "Fix: Prevent crash on null input" \
 - Include Table of Contents in collapsible `<details>` tags
 - Navigation footer: `[← Previous](path) | [↑ Top](#anchor) | [Next →](path)`
 
-### 4.3. Terminal Management
-
-- Prefer a single terminal session
-- Minimize window switching
-- Reuse active sessions where possible
-- Check for running processes before opening new terminals
-
-### 4.4. Testing Approach
+### 4.3. Testing Approach
 
 When modifying code or running tests:
 - Check README or search codebase for test commands first
