@@ -31,6 +31,8 @@ The `constants.sh` file provides centralized ANSI escape codes and constants use
 
 **Location**: `tools/pdf-generator/src/constants.sh`
 
+**Current Status**: Basic implementation exists with CSI pattern and core colors (RED, BOLD, RESET, B_RED). Additional colors and format strings will be added during full implementation.
+
 ## 2. Purpose and Usage
 
 The constants file serves three primary purposes:
@@ -164,32 +166,60 @@ TIMESTAMP_FORMAT="%Y-%m-%d %H:%M:%S"
 
 **Path**: `tools/pdf-generator/src/constants.sh`
 
-**File Structure**:
+**Current File Structure** (as implemented in `src/constants.sh`):
 ```bash
 #!/usr/bin/env bash
-#
-# ANSI Constants for PDF Generator
-# Shared between production code and tests
-#
 
-# Color Codes
-readonly ERROR_COLOR='\033[31;1m'
-readonly SUCCESS_COLOR='\033[32;1m'
-readonly WARNING_COLOR='\033[33;1m'
-readonly INFO_COLOR='\033[36m'
-readonly PROCESSING_COLOR='\033[1m'
-readonly SKIPPED_COLOR='\033[2m'
-readonly PROGRESS_COLOR='\033[0;36m'
-readonly RESET_COLOR='\033[0m'
-readonly BOLD='\033[1m'
+# Description: This file contains shared constants for the pdf-generator tool.
+# It is intended to be sourced by both the main application and the test suite
+# to ensure a single source of truth for values like ANSI color codes.
 
-# Spinner
+# --- ANSI Color Codes ---
+# These variables are used to add color to the terminal output.
+
+# The CSI (Control Sequence Introducer) is the common prefix for ANSI escape sequences.
+# Using $'...' syntax to ensure the escape character is interpreted correctly.
+CSI=$'\033['
+
+# --- SGR (Select Graphic Rendition) Parameters ---
+# These codes control text formatting like color and style.
+
+# Text Colors
+RED="${CSI}31m"
+
+# Text Styles
+BOLD="${CSI}1m"
+
+# Reset all text attributes to the terminal's default.
+RESET="${CSI}0m"
+
+# --- Combined Codes for Convenience ---
+# These are combinations of the above codes for common use cases.
+
+# Bold Red for error messages
+B_RED="${BOLD}${RED}"
+```
+
+**Planned Extensions** (to be added during implementation):
+```bash
+# Additional colors
+GREEN="${CSI}32m"
+YELLOW="${CSI}33m"
+CYAN="${CSI}36m"
+
+# Additional styles
+DIM="${CSI}2m"
+
+# Combined codes
+B_GREEN="${BOLD}${GREEN}"  # Bold Green for success
+B_YELLOW="${BOLD}${YELLOW}"  # Bold Yellow for warnings
+
+# Spinner characters
 readonly SPINNER_CHARS=('—' '\' '|' '/')
 
-# Format Strings
+# Format strings
 readonly PROGRESS_FORMAT="[%s] Overall Progress: %d/%d (%d%%)"
 readonly FOLDER_PROGRESS_FORMAT="  - %s Processing '%s': %d/%d files (%d%%)"
-readonly TIMESTAMP_FORMAT="%Y-%m-%d %H:%M:%S"
 ```
 
 **Usage Pattern**: Source this file at the beginning of scripts:
