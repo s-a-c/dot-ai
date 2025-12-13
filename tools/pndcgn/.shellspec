@@ -1,0 +1,19 @@
+--require spec_helper
+
+## Directory containing spec files
+--default-path tests
+
+## Shell to use for testing
+--shell bash
+
+## Shell options
+--shell-options --noprofile --norc
+
+## Enable color output
+--color
+
+## Output format
+--format documentation
+
+## Run in parallel (optional)
+# --jobs 4
