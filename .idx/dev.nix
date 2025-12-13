@@ -50,7 +50,7 @@
     pkgs.pandoc-drawio-filter
     pkgs.pandoc-ext-diagram
     pkgs.pandoc-fignos
-    pkgs.pandoc-imagine 
+    pkgs.pandoc-imagine
     pkgs.pandoc-include
     pkgs.pandoc-plantuml-filter
     pkgs.pandoc-secnos
@@ -73,9 +73,10 @@
     pkgs.sysz
     (pkgs.texlive.combined.scheme-medium.withPackages (texlive: [
         # This is where you "pair" the specific packages you need.
-        texlive.plantuml 
+        texlive.plantuml
     ]))
     pkgs.trash-cli
+    pkgs.ulid
     pkgs.uv
     pkgs.yq
     pkgs.zoxide
