@@ -24,12 +24,12 @@ Every document must include:
 - [ ] H1 heading with anchor: `<a id="document-name"></a>Document Title`
 - [ ] Numbered headings (1., 1.1., 1.1.1.) for hierarchy
 - [ ] Table of Contents (collapsible format)
-- [ ] Navigation footer with Previous | Next | Top links
+- [ ] Navigation footer with Previous | Next | Top | Start links
 - [ ] Proper accessibility compliance
 
 ### 2.2. File Naming Convention
 
-- **Prefix:** 3-digit number in multiples of 10 (010, 020, 030...)
+- **Prefix:** 4-digit number in multiples of 10 (010, 020, 030...)
 - **Descriptive Name:** Clear, hyphen-separated filename
 - **Extension:** `.md` for all documentation files
 
@@ -80,7 +80,7 @@ Detailed content...
 ```markdown
 ## 9. Navigation
 
-**← Previous:** [Previous Document](previous-document.md) | **Next →** [Next Document](next-document.md) | **Top**
+**← Previous:** [Previous Document](previous-document.md) | **Next →** [Next Document](next-document.md) | **Top** | **Start**
 ```
 
 ## 4. Accessibility Compliance
@@ -152,6 +152,7 @@ graph TB
 ### 6.2. Diagram Accessibility
 
 - [ ] Use approved color palette
+- [ ] Size shapes for
 - [ ] Add descriptive alt text
 - [ ] Ensure high contrast ratios
 - [ ] Test with accessibility tools
@@ -210,7 +211,6 @@ This template ensures compliance with:
 - [Documentation Standards](../010-documentation-standards.md)
 - [TOC-Heading Synchronization](../020-toc-heading-synchronization.md)
 - [Mermaid Accessibility Standards](../040-mermaid-accessibility-standards.md)
-- [DRIP Methodology](../030-drip-methodology.md)
 
 ### 9.2. Quality Assurance Integration
 
@@ -237,7 +237,7 @@ This template ensures compliance with:
 
 ## 11. Navigation
 
-[←  DRIP Task List Template](010-drip-task-list-template.md) | [↑ Top](#documentation-template) |  [Templates Index →](000-index.md)
+[↑ Top](#documentation-template) |  [Templates Index →](000-index.md)
 
 ---
 
